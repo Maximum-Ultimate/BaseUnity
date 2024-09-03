@@ -1,4 +1,4 @@
-PrimeTween:
+PrimeTween: 
 https://assetstore.unity.com/packages/tools/animation/primetween-high-performance-animations-and-sequences-252960?srsltid=AfmBOor5BUyMBATj-MUk6GNPt7KmuUiSo6ePYmVMwXE38iBZjAn43ear
 Reference: https://github.com/KyryloKuzyk/PrimeTween
 
@@ -9,3 +9,9 @@ Package from git url: https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/
 ExtDebug:
 https://github.com/Iam1337/extDebug
 Package from git url: https://github.com/iam1337/extDebug.git#upm
+
+
+Navmeshplus (Nav mesh for 2D):
+https://github.com/h8man/NavMeshPlus
+Package from git url: https://github.com/h8man/NavMeshPlus.git
+
