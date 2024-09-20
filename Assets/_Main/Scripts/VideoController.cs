@@ -1,3 +1,4 @@
+using PrimeTween;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public class VideoController : MonoBehaviour
     public UnityEvent OnVideoStartEvent;
     public UnityEvent OnVideoEndEvent;
 
+    [SerializeField] private bool isTesting = false;
+
     private void Awake()
     {
         _videoPlayer = GetComponent<VideoPlayer>();
@@ -20,11 +23,21 @@ public class VideoController : MonoBehaviour
 
         _videoPlayer.loopPointReached += OnEndVideo;
         _videoPlayer.started += OnStartVideo;
+        
+        isTesting = _videoPlayer.clip == null;
     }
 
     private void OnEnable()
     {
-        _rawImage.color = Color.clear;
+        if (isTesting && _videoPlayer.playOnAwake)
+        {
+            Tween.Delay(2f, () => OnVideoEndEvent?.Invoke());
+            _rawImage.color = Color.white;
+        }
+        else
+        {
+            _rawImage.color = Color.clear;
+        }
     }
 
 
