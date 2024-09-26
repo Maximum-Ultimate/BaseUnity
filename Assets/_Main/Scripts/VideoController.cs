@@ -15,6 +15,8 @@ public class VideoController : MonoBehaviour
     public UnityEvent OnVideoEndEvent;
 
     [SerializeField] private bool isTesting = false;
+    [Tooltip("Set 0 to use video's duration, set to use fixed duration.\nTesting default value is 2 Secs")]
+    [SerializeField] private float fixedDuration = 0f;
 
     private void Awake()
     {
@@ -31,7 +33,8 @@ public class VideoController : MonoBehaviour
     {
         if (isTesting && _videoPlayer.playOnAwake)
         {
-            Tween.Delay(2f, () => OnVideoEndEvent?.Invoke());
+            float duration = fixedDuration == 0 ? 2f : fixedDuration;
+            Tween.Delay(duration, () => OnVideoEndEvent?.Invoke());
             _rawImage.color = Color.white;
         }
         else
@@ -60,6 +63,13 @@ public class VideoController : MonoBehaviour
     {
         _rawImage.color = Color.white;
         OnVideoStartEvent?.Invoke();
+
+        if (fixedDuration > 0)
+        {
+            Tween.Delay(fixedDuration, () => {
+                videoPlayer.Stop();
+            });
+        }
     }
 
     public void OnEndVideo(VideoPlayer videoPlayer)
