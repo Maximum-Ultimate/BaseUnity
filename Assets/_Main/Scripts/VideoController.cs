@@ -43,6 +43,22 @@ public class VideoController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (_videoPlayer.isLooping && _videoPlayer.playOnAwake)
+        {
+            time += Time.deltaTime;
+            if (time > 5 && _videoPlayer.isLooping)
+            {
+                time = 0;
+                if (!_videoPlayer.isPlaying)
+                {
+                    _videoPlayer.Play();
+                }
+            }
+        }
+    }
+
 
     public void Play()
     {
