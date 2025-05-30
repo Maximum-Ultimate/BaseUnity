@@ -17,6 +17,7 @@ public class VideoController : MonoBehaviour
     [SerializeField] private bool isTesting = false;
     [Tooltip("Set 0 to use video's duration, set to use fixed duration.\nTesting default value is 2 Secs")]
     [SerializeField] private float fixedDuration = 0f;
+    private float time = 0f;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class VideoController : MonoBehaviour
 
         _videoPlayer.loopPointReached += OnEndVideo;
         _videoPlayer.started += OnStartVideo;
-        
+
         isTesting = _videoPlayer.clip == null;
     }
 
