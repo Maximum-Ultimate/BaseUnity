@@ -76,7 +76,7 @@ MonoBehaviour:
     height: 1
 --- !u!95 &7699787304746184308
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,6 +90,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -104,6 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2623651936297779087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a75cd39290a134b06a563b580fdeef97, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b58a754be9b2420a9f3dace0ba40304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
