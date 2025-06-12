@@ -17,26 +17,18 @@ public class SceneLoader : MonoBehaviour
 
     public void ChangeSceneWithSFX(string name)
     {
-        StartCoroutine(waitForSFX(name));
-    }
-
-    private IEnumerator waitForSFX(string name)
-    {
         SFXBtn.Play();
-        yield return new WaitForSeconds(TimeSFX);
-        ChangeScene(name);
+        Tween.Delay(TimeTransition, () => {
+            ChangeScene(name);
+        });
     }
 
     public void ChangeSceneWithTransition(string name)
     {
-        StartCoroutine(waitforTransition(name));
-    }
-
-    private IEnumerator waitforTransition(string name)
-    {
         SFXBtn.Play();
         fc.transitionOut();
-        yield return new WaitForSeconds(TimeTransition);
-        GetComponent<SceneLoader>().ChangeScene(name);
+        Tween.Delay(TimeTransition, () => {
+            GetComponent<SceneLoader>().ChangeScene(name);
+        });
     }
 }

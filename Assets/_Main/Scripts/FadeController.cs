@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using PrimeTween;
 
 public class FadeController : MonoBehaviour
 {
@@ -15,14 +16,12 @@ public class FadeController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         animator.SetBool("IsFadingIn", false);
-        StartCoroutine(transitionIn());
-    }
 
-    private IEnumerator transitionIn()
-    {
         ri.enabled = true;
-        yield return new WaitForSeconds(TimeTransition);
-        ri.enabled = false;
+
+        Tween.Delay(TimeTransition, () => {
+            ri.enabled = false;
+        });
     }
 
     public void transitionOut()
