@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using PrimeTween;
@@ -19,16 +18,27 @@ public class SceneLoader : MonoBehaviour
     public void ChangeSceneWithSFX(string name)
     {
         SFXBtn.Play();
-        Tween.Delay(TimeTransition, () => {
+        Tween.Delay(TimeTransition, () =>
+        {
             ChangeScene(name);
         });
     }
 
     public void ChangeSceneWithTransition(string name)
     {
+        fc.transitionOut();
+        Tween.Delay(TimeTransition, () =>
+        {
+            GetComponent<SceneLoader>().ChangeScene(name);
+        });
+    }
+
+    public void ChangeSceneComplete(string name)
+    {
         SFXBtn.Play();
         fc.transitionOut();
-        Tween.Delay(TimeTransition, () => {
+        Tween.Delay(TimeTransition, () =>
+        {
             GetComponent<SceneLoader>().ChangeScene(name);
         });
     }
