@@ -451,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623651936297779087, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3869764605526644761, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
       propertyPath: m_Pivot.x
@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3869764605526644761, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3869764605526644761, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -536,6 +536,10 @@ PrefabInstance:
     - target: {fileID: 5363878920099926386, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363878920099926386, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7699787304746184308, guid: 897e9c7ee64c6424084084a68e00c41e, type: 3}
       propertyPath: m_Controller
@@ -1246,7 +1250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000045776367, y: -400.00006}
+  m_AnchoredPosition: {x: 0, y: -400.00006}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1521203872
@@ -1278,8 +1282,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1505,7 +1509,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1383942845}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: ChangeSceneWithSFX
+        m_MethodName: ChangeSceneComplete
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
