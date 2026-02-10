@@ -1,4 +1,4 @@
-#if PRIME_TWEEN_INSTALLED
+#if PRIME_TWEEN_INSTALLED && UNITY_UGUI_INSTALLED
 using PrimeTween;
 using UnityEngine.UI;
 #endif
@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PrimeTweenDemo {
     public class Demo : MonoBehaviour {
-        #if PRIME_TWEEN_INSTALLED
+        #if PRIME_TWEEN_INSTALLED && UNITY_UGUI_INSTALLED
         [SerializeField] AnimateAllType animateAllType; enum AnimateAllType { Sequence, Async, Coroutine }
         [SerializeField] Slider sequenceTimelineSlider;
         [SerializeField] Text pausedLabel;
@@ -14,13 +14,10 @@ namespace PrimeTweenDemo {
         [SerializeField] TypewriterAnimatorExample typewriterAnimatorExample;
         [SerializeField] Animatable[] animatables;
         [SerializeField] Wheels wheels;
-        [SerializeField, Range(0.5f, 5f)] float timeScale = 1;
         bool isAnimatingWithCoroutineOrAsync;
         public Sequence animateAllSequence;
-        public static Demo instance { get; private set; }
 
         void Awake() {
-            instance = this;
             PrimeTweenConfig.SetTweensCapacity(100);
         }
 
@@ -30,8 +27,6 @@ namespace PrimeTweenDemo {
         }
 
         void OnDisable() => sequenceTimelineSlider.onValueChanged.RemoveListener(SequenceTimelineSliderChanged);
-
-        void OnDestroy() => instance = null;
 
         void SequenceTimelineSliderChanged(float sliderValue) {
             if (!notifySliderChanged) {
@@ -63,8 +58,6 @@ namespace PrimeTweenDemo {
         }
 
         void Update() {
-            Time.timeScale = timeScale;
-
             animateAllPartsButton.GetComponent<Image>().enabled = !isAnimatingWithCoroutineOrAsync;
             animateAllPartsButton.GetComponentInChildren<Text>().enabled = !isAnimatingWithCoroutineOrAsync;
 
@@ -97,7 +90,7 @@ namespace PrimeTweenDemo {
                 return;
             }
             animateAllSequence = Sequence.Create();
-            #if TEXT_MESH_PRO_INSTALLED || (UNITY_6000_0_OR_NEWER && UNITY_UGUI_INSTALLED)
+            #if TEXT_MESH_PRO_INSTALLED
             animateAllSequence.Group(typewriterAnimatorExample.Animate());
             #endif
             float delay = 0f;

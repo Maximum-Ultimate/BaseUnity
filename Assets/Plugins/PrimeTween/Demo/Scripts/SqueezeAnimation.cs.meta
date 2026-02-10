@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46b918305324c464b8affbc3ff8e6053
+guid: 613ad9fe5121a4b02b556b6b16cad710
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,3 +9,10 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252960
+  packageName: "PrimeTween \xB7 High-Performance Animations and Sequences"
+  packageVersion: 1.3.7
+  assetPath: Assets/Plugins/PrimeTween/Demo/Scripts/SqueezeAnimation.cs
+  uploadId: 837278

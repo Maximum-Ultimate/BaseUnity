@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 392ae34732ca345e39c7031598f44522
+guid: 6113f6e98f16c489f87f373fc4133597
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,3 +9,10 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252960
+  packageName: "PrimeTween \xB7 High-Performance Animations and Sequences"
+  packageVersion: 1.3.7
+  assetPath: Assets/Plugins/PrimeTween/Demo/Scripts/Wheels.cs
+  uploadId: 837278

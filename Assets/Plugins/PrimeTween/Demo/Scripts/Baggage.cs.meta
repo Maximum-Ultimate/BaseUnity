@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf561984ca6bd49d591363812be762a2
+guid: 27b542649ab4a463aa343c437387783e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,3 +9,10 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252960
+  packageName: "PrimeTween \xB7 High-Performance Animations and Sequences"
+  packageVersion: 1.3.7
+  assetPath: Assets/Plugins/PrimeTween/Demo/Scripts/Baggage.cs
+  uploadId: 837278
