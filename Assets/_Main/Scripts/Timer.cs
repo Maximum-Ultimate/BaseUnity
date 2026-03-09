@@ -14,8 +14,10 @@ public class Timer : MonoBehaviour
     public static bool GameOver = false;
     public static string EndTime = "00:00:00";
 
-    private double _totalTime = 60;
-    private double _maxTime = 600;
+    [SerializeField] private double TotalTime = 60;
+    [SerializeField] private double MaxTime = 600;
+
+    private double _totalTime;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class Timer : MonoBehaviour
         EndTime = "01:00:00";
         if (IsCountdown)
         {
-            _totalTime = 60;
+            _totalTime = TotalTime;
         }
         else
         {
@@ -64,7 +66,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                if (_totalTime < _maxTime)
+                if (_totalTime < MaxTime)
                 {
                     _totalTime += Time.deltaTime;
                     displayTime(_totalTime);
@@ -95,7 +97,7 @@ public class Timer : MonoBehaviour
         else
         {
             timeToDisplay += 1;
-            timeUsed = _maxTime - timeToDisplay;
+            timeUsed = MaxTime - timeToDisplay;
         }
 
         double minutes = (int)Math.Floor(timeToDisplay / 60.0);
