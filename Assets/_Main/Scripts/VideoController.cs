@@ -94,6 +94,7 @@ public class VideoController : MonoBehaviour
         if (!_videoPlayer.isLooping && hideOnEnd)
         {
             _rawImage.color = Color.clear;
+            gameObject.SetActive(false);
         }
         OnVideoEndEvent?.Invoke();
     }
